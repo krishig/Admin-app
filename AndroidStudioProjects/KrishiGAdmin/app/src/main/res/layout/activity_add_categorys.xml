@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/login_background_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icBackImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0"
+            android:text="@string/add_to_category"
+            android:textAppearance="@style/MediumFont18"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/categoryNameInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:hint="@string/category_name"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:startIconTint="@color/select_category_color"
+                app:startIconDrawable="@drawable/ic_select_category">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/categoryNameTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textPersonName"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/UnElevatedFilledButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categoryNameInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/main_gradient"
+                android:text="@string/submit"
+                android:textAppearance="@style/BoldFont16"
+                app:backgroundTint="@null" />
+
+            <include
+                android:id="@+id/progressDialog"
+                layout="@layout/please_wait_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

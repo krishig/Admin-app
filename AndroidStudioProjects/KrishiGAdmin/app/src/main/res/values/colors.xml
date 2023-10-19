@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary brand color. -->
+    <color name="colorPrimary">#44B636</color> <!-- default toolbar, button color-->
+    <color name="colorPrimaryVariant">#44B636</color> <!-- default status bar color -->
+    <color name="colorOnPrimary">#000000</color>
+
+    <!-- Secondary brand color. -->
+    <color name="colorSecondary">#44B636</color>
+    <color name="colorSecondaryVariant">#44B636</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+
+    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorOnBackground">#000000</color>
+    <color name="colorWindowBackground">#FFFFFF</color>
+    <color name="colorAccent">#44B636</color>
+    <color name="toolBarColor">#FFFFFF</color>
+
+
+    <!-- Status bar color. -->
+    <color name="colorStatusBar">@color/colorPrimaryVariant</color> <!-- default status bar color -->
+
+    <!-- Actionbar or Toolbar colors-->
+    <color name="colorToolbarBackground">#FFFFFF</color>
+    <color name="colorHamburger">#000000</color>'
+    <color name="colorToolbarTitle">#000000</color>
+    <color name="colorToolbarSubTitle">#000000</color>'
+
+    <!-- Badge count text colors -->
+    <color name="badgeBorderColor">#FFFFFF</color>
+    <color name="badgeInsideColor">#FF0000</color>
+
+    <!-- System Navigation bar colors. -->
+    <color name="colorNavBarDivider">@color/colorPrimaryVariant</color>
+    <color name="colorNavBar">@color/colorPrimaryVariant</color>
+    <!--=========================================================================================-->
+
+    <!--Common Color-->
+    <color name="colorHeading">#F04E3E</color>
+    <color name="colorHorizontalLine">#F04E3E</color>
+    <color name="colorAppQuestion">#000000</color>
+    <color name="colorNavigateLink">#F04E3E</color>
+
+    <!-- TextInputLayout colors -->
+    <color name="boxBackgroundColor">@android:color/transparent</color>
+    <color name="boxStrokeColor">#7C7C7C</color>
+    <color name="boxBackgroundColorInner">#FFFFFF</color>
+    <color name="boxStrokeColorInner">#555555</color>
+    <color name="colorActiveHint">#3B3B3B</color>
+    <color name="colorInactiveHint">#D9D9D9</color>
+    <color name="colorError">#FF0000</color>
+    <color name="colorCounter">#FF0000</color>
+    <color name="colorCounterOverflow">#FF0000</color>
+    <color name="colorEndIconTint">#D9D9D9</color>
+
+    <!-- TextInputEditText colors -->
+    <color name="colorText">#000000</color>
+    <color name="colorHint">#3B3B3B</color>
+    <color name="homeColor">#373737</color>
+    <color name="opt_color">#343434</color>
+    <color name="strokeColor">#D9D9D9</color>
+    <color name="colorCursor">#3760A3</color>
+    <color name="colorHintInput">#747474</color>
+    <color name="colorHeadingTextView">#555555</color>
+    <color name="viewInvoiceTextView">#4865FF</color>
+
+    <!-- Button colors -->
+    <color name="colorButtonUnPressed">#F04E3E</color>
+    <color name="colorButtonPressed">#F04E3E</color>
+    <color name="ic_download">#485470</color>
+    <color name="box_background_ripple_color">#D9E4F6</color>
+    <color name="colorRedButton_Text">#FFFFFF</color>
+    <color name="colorRedButton_UnPressed">#C20114</color>
+    <color name="colorRedButton_Pressed">#A40A1A</color>
+    <color name="box_background_color">#F1F4F9</color>
+    <color name="home_card_stroke_color">#44B636</color>
+    <color name="home_one_card_back_ground_color">#FCF3E2</color>
+    <color name="home_second_card_back_ground_color">#FFD8FF</color>
+    <!-- Button colors -->
+    <color name="colorGuestLoginButtonUnPressed">#FA952C</color>
+    <color name="colorGuestLoginButtonPressed">#AC6C29</color>
+
+    <!-- Empty Button colors -->
+    <color name="colorEmptyButtonUnPressed">#F04E3E</color>
+    <color name="colorEmptyButtonPressed">#D28461</color>
+
+    <!-- Filled Button colors -->
+    <color name="colorFilledButtonUnPressed">#44B636</color>
+    <color name="colorFilledButtonPressed">#44B636</color>
+
+    <!-- PinView colors -->
+    <color name="pin_view_text_hint_default">#FFFFFF</color>
+    <color name="pin_view_text_selected">#000000</color>
+    <color name="pin_view_text_focused">#535353</color>
+    <color name="pin_view_text_default">#535353</color>
+    <color name="pin_view_line_selected">#535353</color>
+    <color name="pin_view_line_focused">#343434</color>
+    <color name="pin_view_line_default">#343434</color>
+
+    <!--Bottom Navigation Colors-->
+    <color name="bottom_navigation_view_selected_color">#F07F4C</color>
+    <color name="bottom_navigation_view_unselected_color">#535353</color>
+
+    <!--Dashboard Colors-->
+    <color name="colorDashboardOne">#FFB74A</color>
+    <color name="colorDashboardTwo">#00D37B</color>
+    <color name="colorDashboardThree">#8875FF</color>
+    <color name="colorDashboardFour">#FF4A4A</color>
+    <color name="colorDashboardFive">#37CFB4</color>
+    <color name="colorDashboardSix">#FF7B5D</color>
+    <color name="colorDashboardSeven">#1A75EA</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="drawer_color">#2F3045</color>
+    <color name="login_grey">#7C7C7C</color>
+    <color name="black">#000000</color>
+    <color name="home_grey">#868889</color>
+    <color name="backArrowColor">#535353</color>
+
+    <color name="bottom_navigation_view_background_color">#F1F1F1</color>
+    <color name="text_gray">#66FFFFFF</color>
+    <color name="color_grey">#999999</color>
+    <color name="color_grey1">#DEDEDE</color>
+    <color name="color_grey2">#dfdfdf</color>
+    <color name="color_gray3">#DDDDDD</color>
+    <color name="dark_color">#1A2058</color>
+    <color name="present_color">#00C113</color>
+    <color name="absent_color">#EC2828</color>
+    <color name="leave_color">#2853EC</color>
+    <color name="view_color">#DBDBDB</color>
+
+
+    <!-- Yes, Confirm Button colors -->
+    <color name="colorYesConfirmButtonUnPressed">#57AC42</color>
+    <color name="colorYesConfirmButtonPressed">#3E7B2F</color>
+
+    <!-- No, Rewrite Button colors -->
+    <color name="colorNoRewriteButtonUnPressed">#FF0000</color>
+    <color name="colorNoRewriteButtonPressed">#B20000</color>
+    <color name="button_background">#F0F0F0</color>
+
+    <color name="left_navigation_view_icon_selected">#44B636</color>
+    <color name="left_navigation_view_icon_unselected">#FFFFFF</color>
+
+    <color name="left_navigation_view_text_selected">#44B636</color>
+    <color name="left_navigation_view_text_unselected">#FFFFFF</color>
+    <color name="wallet_color_one">#FFEFEF</color>
+    <color name="wallet_color_two">#F2F2F2</color>
+    <color name="home_item_grey">#E1E3E8</color>
+    <color name="sub_category_color">#F0F1F2</color>
+    <color name="price_color">#FF324B</color>
+
+    <color name="select_category_color">#3A3A3A</color>
+    <color name="seed_card_color">#F3F5F7</color>
+    <color name="minus_card_view">#F1F1F5</color>
+    <color name="ic_arrow_right_color">#37474F</color>
+
+</resources>

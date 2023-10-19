@@ -1,0 +1,17 @@
+ext {
+    projectConfiguration = [
+            compileSdk   : 32,
+            applicationId: "com.krishigadmin.android",
+            minSdk       : 21,
+            targetSdk    : 32,
+            versionCode  : 1,
+            versionName  : "1.0"
+    ]
+
+    debugServer = [
+            devBaseUrl: "\"http://13.200.56.10:5000/python/\"",
+    ]
+    releaseServer = [
+            prodBaseUrl: "\"http://13.200.56.10:5000/python/\"",
+    ]
+}

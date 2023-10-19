@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:state_pressed="true">
+        <layer-list>
+            <item>
+                <shape
+                    android:shape="rectangle">
+
+                    <solid
+                        android:color="#C8C8C8" />
+
+                    <stroke
+                        android:color="#000000"
+                        android:width="@dimen/_1sdp"/>
+
+                    <corners
+                        android:bottomLeftRadius="@dimen/_8sdp"
+                        android:bottomRightRadius="@dimen/_8sdp"
+                        android:topLeftRadius="@dimen/_8sdp"
+                        android:topRightRadius="@dimen/_8sdp" />
+
+                    <corners
+                        android:bottomLeftRadius="@dimen/_16sdp"
+                        android:bottomRightRadius="@dimen/_16sdp"
+                        android:topLeftRadius="@dimen/_16sdp"
+                        android:topRightRadius="@dimen/_16sdp" />
+
+                    <padding
+                        android:bottom="@dimen/_3sdp"
+                        android:left="@dimen/_15sdp"
+                        android:right="@dimen/_15sdp"
+                        android:top="@dimen/_3sdp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape
+                    android:shape="rectangle">
+
+                    <solid
+                        android:color="#FFFFFF" />
+
+                    <stroke
+                        android:color="#000000"
+                        android:width="@dimen/_1sdp"/>
+
+                    <corners
+                        android:bottomLeftRadius="@dimen/_16sdp"
+                        android:bottomRightRadius="@dimen/_16sdp"
+                        android:topLeftRadius="@dimen/_16sdp"
+                        android:topRightRadius="@dimen/_16sdp" />
+
+                    <padding
+                        android:bottom="@dimen/_5sdp"
+                        android:left="@dimen/_10sdp"
+                        android:right="@dimen/_10sdp"
+                        android:top="@dimen/_5sdp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

@@ -1,0 +1,154 @@
+plugins {
+    id 'com.android.application'
+    id 'dagger.hilt.android.plugin'
+    // id 'com.google.gms.google-services'
+}
+
+def androidVersions = rootProject.ext.projectConfiguration
+def androidDebug = rootProject.ext.debugServer
+def androidRelease = rootProject.ext.releaseServer
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.krishigadmin.android"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        /*
+      * If your minSdkVersion is set to 21 or higher, multidex is enabled by default
+      * and you do not need the multidex support library.
+      */
+        multiDexEnabled true
+
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", androidDebug.devBaseUrl)
+        }
+
+        release {
+            buildConfigField("String", "BASE_URL", androidRelease.prodBaseUrl)
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(':library-pinview')
+    implementation project(':library-networkconnectivity')
+    implementation project(':library-utilities')
+    implementation project(':library-crashreporter')
+    implementation project(':library-adapter')
+    implementation project(':library-sharedpreference')
+
+
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.navigation:navigation-fragment:2.5.1'
+
+    /* use this two library, ssp is for text size, and sdp is for margin, padding and layout size */
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-beta02'
+
+    /**
+     * However, if your minSdkVersion is set to 20 or lower,
+     * then you must use the multiDex support library
+     */
+    implementation "androidx.multidex:multidex:2.0.1"
+
+    /* Google Material Design Libraries */
+    implementation "com.google.android.material:material:1.6.1"
+
+    /* use this two library, ssp is for text size, and sdp is for margin, padding and layout size */
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    /* View Libraries */
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "androidx.drawerlayout:drawerlayout:1.1.1"
+
+    /********************************** JetPack Libraries Start ***********************************/
+    // Navigation
+    implementation 'androidx.navigation:navigation-fragment:2.5.1'
+    implementation 'androidx.navigation:navigation-ui:2.5.1'
+
+    // Dagger Hilt
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    annotationProcessor "com.google.dagger:hilt-compiler:2.38.1"
+
+    // Lifecycle only (without ViewModel or LiveData) for Java & Kotlin
+    implementation "androidx.lifecycle:lifecycle-runtime:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+
+    // ViewModel for Java & Kotlin
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    // LiveData for Java & Kotlin
+    implementation "androidx.lifecycle:lifecycle-livedata:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    /*********************************** JetPack Libraries End ************************************/
+
+    /* Retrofit & OkHttp Libraries */
+    implementation "com.squareup.okhttp3:okhttp:4.9.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
+    /* Glide Libraries */
+    implementation "com.github.bumptech.glide:glide:4.13.1"
+    annotationProcessor "com.github.bumptech.glide:compiler:4.13.0"
+
+    /* Other Libraries */
+    implementation "com.google.code.gson:gson:2.9.1"
+
+    /* https://github.com/hbb20/CountryCodePickerProject */
+    implementation 'com.hbb20:ccp:2.5.0'
+    /**
+     * Logging Interceptor
+     * link : https://github.com/ihsanbal/LoggingInterceptor
+     */
+    implementation('com.github.ihsanbal:LoggingInterceptor:3.1.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+    //firebase
+    /*implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation platform('com.google.firebase:firebase-bom:31.2.0')
+    implementation 'com.google.firebase:firebase-analytics'*/
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/addProductBrands"
+    tools:context=".ui.home.fragments.addProductBrands.view.AddProductBrandsActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/login_background_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icBackImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0"
+            android:text="@string/add_to_product_brands"
+            android:textAppearance="@style/MediumFont18"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayout"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/productBrandsInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:hint="@string/product_brands"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:startIconTint="@color/select_category_color"
+                app:startIconDrawable="@drawable/ic_select_category">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productBrandsTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textPersonName"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_280sdp"
+                android:layout_below="@+id/productBrandsInputLayout"
+                android:layout_margin="@dimen/_12sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/home_grey"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:cardBackgroundColor="@color/home_second_card_back_ground_color"
+                        app:cardCornerRadius="@dimen/_25sdp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:id="@+id/crossImageView"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_5sdp"
+                            android:src="@drawable/ic_close_24px" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <ImageView
+                        android:id="@+id/productImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:layout_marginStart="@dimen/_33sdp"
+                        android:layout_marginTop="@dimen/_33sdp"
+                        android:layout_marginEnd="@dimen/_33sdp"
+                        android:layout_marginBottom="@dimen/_33sdp"
+                        android:src="@drawable/image_product" />
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/cameraLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_below="@+id/imageMaterialCardView"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/sub_category_background"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_a_photo_24px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/upload_image_here"
+                    android:textAppearance="@style/MediumFont16"
+                    android:textColor="@color/login_grey" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/UnElevatedFilledButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cameraLinearLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/main_gradient"
+                android:text="@string/submit"
+                android:textAppearance="@style/BoldFont16"
+                app:backgroundTint="@null" />
+
+            <include
+                android:id="@+id/progressDialog"
+                layout="@layout/please_wait_progress_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

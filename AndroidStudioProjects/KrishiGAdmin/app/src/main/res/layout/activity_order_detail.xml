@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.fragments.manageOrder.orderDetail.OrderDetailActivity">
+
+    <ImageView
+        android:id="@+id/icBackImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:contentDescription="@string/image"
+        android:src="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/subCategoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:layout_toEndOf="@+id/icBackImageView"
+        android:letterSpacing="0"
+        android:text="@string/order_details"
+        android:textAppearance="@style/BoldFont16"
+        android:textColor="@color/black" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icBackImageView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/addMaterialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cardBackgroundColor="@color/seed_card_color"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/home_grey"
+                app:strokeWidth="0.5dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/addMaterialCardView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardBackgroundColor="@color/seed_card_color"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/home_grey"
+                        app:strokeWidth="0.5dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/_8sdp"
+                            android:paddingBottom="@dimen/_5sdp">
+
+                            <TextView
+                                android:id="@+id/category2TextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:letterSpacing="0"
+                                android:text="@string/order_ids"
+                                android:textAppearance="@style/BoldFont14"
+                                android:textColor="@color/home_grey" />
+
+                            <TextView
+                                android:id="@+id/categoryTextView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_toEndOf="@+id/contactNumberTextView2"
+                                android:letterSpacing="0"
+                                android:text="@string/sign_up"
+                                android:textAppearance="@style/BoldFont14"
+                                android:textColor="@color/black" />
+
+
+                            <TextView
+                                android:id="@+id/categoryPrice2TextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/categoryTextView"
+                                android:letterSpacing="0"
+                                android:text="Price : "
+                                android:textAppearance="@style/BoldFont14"
+                                android:textColor="@color/home_grey" />
+
+                            <TextView
+                                android:id="@+id/categoryPriceTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/categoryTextView"
+                                android:layout_toEndOf="@+id/contactNumberTextView2"
+                                android:letterSpacing="0"
+                                android:text="400"
+                                android:textAppearance="@style/BoldFont14"
+                                android:textColor="@color/red" />
+
+                            <TextView
+                                android:id="@+id/statusTextView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/categoryPriceTextView"
+                                android:letterSpacing="0"
+                                android:text="Status"
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/home_grey" />
+
+                            <TextView
+                                android:id="@+id/statusTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/categoryPriceTextView"
+                                android:layout_toEndOf="@+id/contactNumberTextView2"
+                                android:letterSpacing="0"
+                                android:text=""
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/contactNumberTextView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/statusTextView"
+                                android:letterSpacing="0"
+                                android:text="Contact Number : "
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/home_grey" />
+
+                            <TextView
+                                android:id="@+id/contactNumberTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/statusTextView"
+                                android:layout_toEndOf="@+id/contactNumberTextView2"
+                                android:letterSpacing="0"
+                                android:text=""
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/black" />
+
+
+                            <TextView
+                                android:id="@+id/dateTextView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/contactNumberTextView"
+                                android:letterSpacing="0"
+                                android:text="Order Date : "
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/home_grey" />
+
+                            <TextView
+                                android:id="@+id/dateTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/contactNumberTextView"
+                                android:layout_toEndOf="@+id/contactNumberTextView2"
+                                android:letterSpacing="0"
+                                android:text=""
+                                android:textAppearance="@style/BoldFont12"
+                                android:textColor="@color/black" />
+                        </RelativeLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <TextView
+                        android:id="@+id/productsTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addMaterialCardView2"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:letterSpacing="0"
+                        android:text="Products"
+                        android:textAppearance="@style/BoldFont16"
+                        android:textColor="@color/black" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/seedsRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/productsTextView"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginBottom="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/customerDetailTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/seedsRecyclerView"
+                        android:letterSpacing="0"
+                        android:text="Customer Detail"
+                        android:textAppearance="@style/BoldFont16"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:id="@+id/dropDownImageView"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_below="@+id/seedsRecyclerView"
+                        android:layout_marginTop="-5dp"
+                        android:layout_toEndOf="@+id/customerDetailTextView"
+                        android:src="@drawable/ccp_ic_arrow_drop_down"
+                        app:tint="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/contentLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dropDownImageView"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/customerNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:letterSpacing="0"
+                            android:text="@string/name"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/customerMobileNumberTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:letterSpacing="0"
+                            android:text="@string/mobile_number"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/black" />
+
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/customerAddressTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/contentLinearLayout"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:letterSpacing="0"
+                        android:text="Customer Address"
+                        android:textAppearance="@style/BoldFont16"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:id="@+id/dropDownAddressImageView"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_below="@+id/contentLinearLayout"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_toEndOf="@+id/customerAddressTextView"
+                        android:src="@drawable/ccp_ic_arrow_drop_down"
+                        app:tint="@color/black" />
+
+                    <RelativeLayout
+                        android:id="@+id/locationLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dropDownAddressImageView"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/addMaterialCardView3"
+                            android:layout_width="@dimen/_33sdp"
+                            android:layout_height="@dimen/_33sdp"
+                            android:layout_centerVertical="true"
+                            app:cardBackgroundColor="@color/minus_card_view"
+                            app:cardCornerRadius="@dimen/_28sdp"
+                            app:cardElevation="0dp"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="@dimen/_1sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_full" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <TextView
+                            android:id="@+id/locationTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_6sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:layout_toEndOf="@+id/addMaterialCardView3"
+                            android:letterSpacing="0"
+                            android:text=""
+                            android:textAppearance="@style/MediumFont12"
+                            android:textColor="@color/black" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:id="@+id/updateStatusButton"
+                        style="@style/UnElevatedFilledButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/locationLinearLayout"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/main_gradient"
+                        android:text="@string/update_status"
+                        android:textAppearance="@style/BoldFont16"
+                        app:backgroundTint="@null" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/errorImageViewSeeds"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/error_image"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/errorTextViewSeeds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/errorImageViewSeeds"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineSpacingExtra="0dp"
+        android:text="@string/no_data_found"
+        android:textAppearance="@style/BoldFont12"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/progressDialog"
+        layout="@layout/please_wait_progress_bar" />
+</RelativeLayout>

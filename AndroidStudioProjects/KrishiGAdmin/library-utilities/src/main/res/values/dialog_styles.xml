@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Dynamic_Dialog_Default_Style" parent="@style/Theme.AppCompat.Dialog">
+        <!--Window background color is transparent-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!--Whether floating on the interface-->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+
+        <!-- Whether the background is allowed to darken --> <!-- Whether the background is blurred -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/UpDownAnimation</item>
+
+        <!--Is there a title-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTitleStyle">@null</item>
+
+        <!--Is it semi-transparent?-->
+        <item name="android:windowIsTranslucent">true</item>
+
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <!-- ******************************** windowAnimationStyle ********************************* -->
+</resources>

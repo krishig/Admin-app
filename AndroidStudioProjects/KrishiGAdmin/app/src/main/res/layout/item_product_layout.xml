@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageMaterialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_190sdp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="0dp"
+        app:strokeColor="@color/strokeColor"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageProduct"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/image_product" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@+id/imageProduct"
+                android:background="@color/strokeColor" />
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/view"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/_12sdp"
+                android:paddingTop="@dimen/_12sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/orderIdTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0"
+                    android:text="@string/name"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/login_grey" />
+
+                <TextView
+                    android:id="@+id/orderIdDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/orderIdTextView"
+                    android:gravity="end"
+                    android:letterSpacing="0"
+                    android:text="@string/order_id"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/customerNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderIdDetailTextView"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/category"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/login_grey"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/customerNameDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderIdDetailTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_toEndOf="@+id/customerNameTextView"
+                    android:gravity="end"
+                    android:letterSpacing="0"
+                    android:text="@string/order_id"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/black"
+                    android:visibility="gone" />
+
+
+                <TextView
+                    android:id="@+id/productTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customerNameDetailTextView"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/sub_category"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/login_grey" />
+
+                <TextView
+                    android:id="@+id/productDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customerNameDetailTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_toEndOf="@+id/productTextView"
+                    android:gravity="end"
+                    android:letterSpacing="0"
+                    android:text="@string/order_id"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/quantityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/productDetailTextView"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/brand_name"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/login_grey" />
+
+                <TextView
+                    android:id="@+id/quantityDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/productDetailTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_toEndOf="@+id/quantityTextView"
+                    android:gravity="end"
+                    android:letterSpacing="0"
+                    android:text="@string/order_id"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/black" />
+
+
+                <TextView
+                    android:id="@+id/totalAmountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quantityDetailTextView"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/price"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/login_grey" />
+
+                <TextView
+                    android:id="@+id/totalAmountDetailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/quantityDetailTextView"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_toEndOf="@+id/totalAmountTextView"
+                    android:gravity="end"
+                    android:letterSpacing="0"
+                    android:text="@string/order_id"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/viewDetailButton"
+                    style="@style/UnElevatedFilledButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/main_gradient"
+                    android:paddingVertical="0dp"
+                    android:text="@string/view_details"
+                    android:textAppearance="@style/BoldFont14"
+                    app:backgroundTint="@null" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

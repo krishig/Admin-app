@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AddProductActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.fragments.addProduct.view.AddProductActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@drawable/login_background_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icBackImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:letterSpacing="0"
+            android:text="@string/add_product"
+            android:textAppearance="@style/MediumFont18"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/selectBrandTextInputLayout"
+                style="@style/DropDownInputField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectSubCategoryTextInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:textColorHint="@color/colorHeadingTextView"
+                app:endIconTint="@color/colorHeadingTextView"
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:startIconTint="@color/select_category_color"
+                app:startIconDrawable="@drawable/ic_select_category">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/selectBrandAppCompatAutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/select_brand"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="none"
+                    android:lineSpacingExtra="0dp"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/selectSubCategoryTextInputLayout"
+                style="@style/DropDownInputField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:textColorHint="@color/colorHeadingTextView"
+                app:endIconTint="@color/colorHeadingTextView"
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:startIconTint="@color/select_category_color"
+                app:startIconDrawable="@drawable/ic_select_category">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/selectSubCategoryAppCompatAutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="true"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/select_sub_category"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="none"
+                    android:lineSpacingExtra="0dp"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/productNameInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectBrandTextInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/product_name"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/productNameTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textPersonName"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/priceInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productNameInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/price"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/priceTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/wholePriceInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/priceInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/whole_price"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/wholePriceTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/baseUnitInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wholePriceInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/base_unit"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/baseUnitTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textPersonName"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/quantityInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/baseUnitInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/quantity"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/quantityTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/discountInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantityInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/discount"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/discountTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="number"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descriptionInputLayout"
+                style="@style/TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/discountInputLayout"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/product_description"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                app:endIconCheckable="true"
+                app:endIconMode="clear_text"
+                app:errorEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionTextInputEditText"
+                    style="@style/TextInputEditText"
+                    android:gravity="top"
+                    android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:includeFontPadding="false"
+                    android:inputType="textMultiLine"
+                    android:lineSpacingExtra="0dp"
+                    android:lines="4"
+                    android:textAppearance="@style/MediumFont12"
+                    android:textColor="@color/colorHeadingTextView" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/selectedImagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:clipToPadding="false"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone"
+                android:layout_below="@+id/descriptionInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionInputLayout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/uploadedImagesRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectedImagesRecyclerView"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:clipToPadding="false"
+                android:padding="@dimen/_5sdp"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/selectedImagesRecyclerView" />
+
+
+            <LinearLayout
+                android:id="@+id/cameraLinearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_below="@+id/uploadedImagesRecyclerView"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:background="@drawable/sub_category_background"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_a_photo_24px" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:letterSpacing="0"
+                    android:text="@string/upload"
+                    android:textAppearance="@style/MediumFont14"
+                    android:textColor="@color/login_grey" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/UnElevatedFilledButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cameraLinearLayout1"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_12sdp"
+                android:background="@drawable/main_gradient"
+                android:text="@string/submit"
+                android:textAppearance="@style/BoldFont16"
+                app:backgroundTint="@null" />
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/progressDialog"
+        layout="@layout/please_wait_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+
+    <include
+        android:id="@+id/progressDialog2"
+        layout="@layout/number_progress_bar_wait" />
+</RelativeLayout>

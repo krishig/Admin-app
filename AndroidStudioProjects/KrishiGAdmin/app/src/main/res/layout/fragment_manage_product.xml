@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.home.fragments.manageProduct.view.ManageProductFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_background_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/searchRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/searchBarShadowCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_toStartOf="@+id/addMaterialCardView"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="0dp"
+            app:strokeColor="@color/home_item_grey"
+            app:strokeWidth="1dp">
+
+            <RelativeLayout
+                android:id="@+id/searchBarRelativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_42sdp"
+                android:padding="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/searchImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_search" />
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_toEndOf="@+id/searchImageView"
+                    android:autofillHints="false"
+                    android:background="@android:color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:hint="@string/search_product"
+                    android:includeFontPadding="false"
+                    android:inputType="text"
+                    android:lineSpacingExtra="0dp"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/MediumFont14"
+                    android:textColor="@color/home_grey"
+                    android:textColorHint="@color/home_grey" />
+
+
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/addMaterialCardView"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_toStartOf="@+id/filterImageView"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_28sdp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_add" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/filterImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_filter" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchRelativeLayout"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selectCategoryTextInputLayout"
+            style="@style/DropDownInputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textColorHint="@color/colorHeadingTextView"
+            app:endIconTint="@color/colorHeadingTextView"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@null"
+            app:startIconDrawable="@drawable/ic_select_category"
+            app:startIconTint="@color/home_grey">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/selectCategoryAppCompatAutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:hint="@string/select_category"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="none"
+                android:lineSpacingExtra="0dp"
+                android:textAppearance="@style/MediumFont12"
+                android:textColor="@color/colorHeadingTextView" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selectBrandTextInputLayout"
+            style="@style/DropDownInputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textColorHint="@color/colorHeadingTextView"
+            app:endIconTint="@color/colorHeadingTextView"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@null"
+            app:startIconDrawable="@drawable/ic_select_category"
+            app:startIconTint="@color/home_grey">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/selectBrandAppCompatAutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:hint="@string/select_brand"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="none"
+                android:lineSpacingExtra="0dp"
+                android:textAppearance="@style/MediumFont12"
+                android:textColor="@color/colorHeadingTextView" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/selectSubCategoryTextInputLayout"
+            style="@style/DropDownInputField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:textColorHint="@color/colorHeadingTextView"
+            app:endIconTint="@color/colorHeadingTextView"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@null"
+            app:startIconDrawable="@drawable/ic_select_category"
+            app:startIconTint="@color/home_grey">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/selectSubCategoryAppCompatAutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:hint="@string/select_sub_category"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="none"
+                android:lineSpacingExtra="0dp"
+                android:textAppearance="@style/MediumFont12"
+                android:textColor="@color/colorHeadingTextView" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/clearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="@dimen/_7sdp"
+            android:letterSpacing="0"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/clear"
+            android:textAppearance="@style/BoldFont14"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:overScrollMode="never"
+                android:paddingTop="@dimen/_12sdp" />
+
+            <ProgressBar
+                android:id="@+id/idPBLoading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/errorImageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_220sdp"
+                android:layout_below="@+id/nestedScrollView"
+                android:layout_gravity="center"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/error_image"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/errorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/errorImageView"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:text="@string/no_data_found"
+                android:textAppearance="@style/BoldFont12"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/errorImageView" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include
+        android:id="@+id/progressDialog"
+        layout="@layout/please_wait_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

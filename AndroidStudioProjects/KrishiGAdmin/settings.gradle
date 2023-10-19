@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url "https://jitpack.io" }
+    }
+}
+rootProject.name = "KrishiG Admin"
+include ':app'
+include ':library-adapter'
+include ':library-pinview'
+include ':library-utilities'
+include ':library-crashreporter'
+include ':library-networkconnectivity'
+include ':library-sharedpreference'
+

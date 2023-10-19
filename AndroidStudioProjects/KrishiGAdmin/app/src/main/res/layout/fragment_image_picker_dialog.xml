@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorSecondary">
+
+        <ImageView
+            android:id="@+id/backButtonImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Select Images"
+            android:textAppearance="@style/BoldFont10"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/contentLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/productBarCodeLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/headingOneTextView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical"
+                android:text="Selected Images"
+                android:textSize="@dimen/_12ssp"
+                android:textAppearance="@style/BoldFont10"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/doneButtonTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:background="@drawable/image_picker_done_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="Done"
+                android:textSize="@dimen/_12ssp"
+                android:textAppearance="@style/BoldFont10"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/selectedImagesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            tools:listitem="@layout/item_selected_picture" />
+
+        <TextView
+            android:id="@+id/headingTwoTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:text="Images From"
+            android:textSize="@dimen/_12ssp"
+            android:textAppearance="@style/BoldFont10"
+            android:textColor="@color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imagesFromRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            tools:listitem="@layout/item_select_picture" />
+    </LinearLayout>
+</LinearLayout>

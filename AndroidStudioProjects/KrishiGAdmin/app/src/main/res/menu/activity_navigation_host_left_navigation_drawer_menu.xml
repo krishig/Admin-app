@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_navigation_home"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+    </group>
+    <group
+        android:id="@+id/menu_manage_category"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_category"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_sub_category"
+            android:title="Manage Category" />
+    </group>
+    <group
+        android:id="@+id/menu_manage_sub_category"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_sub_category"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_sub_category"
+            android:title="Manage Sub Category" />
+    </group>
+    <group
+        android:id="@+id/menu_navigation_manage_product"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_manage_product"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_product"
+            android:title="Manage Product" />
+    </group>
+
+
+    <group
+        android:id="@+id/menu_manage_brands"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_manageBrands"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_brands"
+            android:title="Manage Brands" />
+    </group>
+    <group
+        android:id="@+id/menu_manage_order"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_manage_order"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_brands"
+            android:title="Manage Order" />
+    </group>
+
+
+    <group
+        android:id="@+id/menu_manage_customers"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_customers"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_customers"
+            android:title="Manage Customers" />
+    </group>
+
+    <group
+        android:id="@+id/menu_manage_sales_person"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_sales_person"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_sales_person"
+            android:title="Manage Sales Person" />
+    </group>
+
+<!--    <group
+        android:id="@+id/menu_manage_orders"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_orders"
+            android:checked="true"
+            android:icon="@drawable/ic_manage_orders"
+            android:title="Manage Orders" />
+    </group>-->
+
+    <group
+        android:id="@+id/menu_settings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_settings"
+            android:checked="true"
+            android:icon="@drawable/ic_setting"
+            android:title="Manage Settings" />
+    </group>
+
+
+</menu>

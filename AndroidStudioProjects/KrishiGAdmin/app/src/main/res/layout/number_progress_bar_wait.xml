@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/wait"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CCFFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <TextView
+        android:id="@+id/countTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="1/0"
+        android:textAppearance="@style/BoldFont16"
+        android:textColor="@color/colorSecondary" />
+
+<!--    <com.library.numberprogressbar.NumberProgressBar
+        android:id="@+id/numberProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp" />-->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/please_wait"
+        android:textAppearance="@style/BoldFont16"
+        android:textColor="@color/colorSecondary" />
+</LinearLayout>

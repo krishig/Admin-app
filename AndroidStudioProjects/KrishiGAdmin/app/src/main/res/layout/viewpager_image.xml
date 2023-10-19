@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/subCategoryRowItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/productImageView"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/image_product" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardViewZoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="@dimen/_5sdp">
+
+        <ImageView
+            android:id="@+id/zoomImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_sub_cat_delete"
+            app:tint="@color/black" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+</RelativeLayout>

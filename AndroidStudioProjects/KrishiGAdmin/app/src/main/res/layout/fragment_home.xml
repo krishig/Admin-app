@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_gradient"
+    tools:context=".ui.home.fragments.home.view.HomeFragment">
+
+ <!--   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="never">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp">
+
+                <RelativeLayout
+                    android:id="@+id/mainRelativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/hiTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0"
+                        android:text="@string/hi"
+                        android:textAppearance="@style/BoldFont24"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nameTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/hiTextView"
+                        android:layout_toStartOf="@+id/materialCardView"
+                        android:letterSpacing="0"
+                        android:text="@string/amelia_barlow"
+                        android:textAppearance="@style/BoldFont24"
+                        android:textColor="@color/white" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/materialCardView"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="@dimen/_25sdp"
+                        app:cardElevation="@dimen/_2sdp">
+
+                        <TextView
+                            android:id="@+id/dateDetailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:letterSpacing="0"
+                            android:text=""
+                            android:textAppearance="@style/BoldFont24"
+                            android:textColor="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/appLogoImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_below="@+id/mainRelativeLayout"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/star_pattern" />
+
+                <LinearLayout
+                    android:id="@+id/cardLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/appLogoImageView"
+                    android:layout_marginTop="-25dp"
+                    android:elevation="@dimen/_12sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <LinearLayout
+                        android:id="@+id/outOfDeliveryLinearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_red_stroke_background"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/home_one_card_back_ground_color"
+                            app:cardCornerRadius="@dimen/_40sdp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_total_quantity" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/outOfDeliveryDetailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:letterSpacing="0"
+                            android:text="0"
+                            android:textAppearance="@style/BoldFont18"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:id="@+id/outOfDeliveryTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:letterSpacing="0"
+                            android:text="@string/out_of_delivery"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/deliveredLinearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_green_stroke_background"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/home_second_card_back_ground_color"
+                            app:cardCornerRadius="@dimen/_40sdp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_total_sales" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/deliveredDetailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:letterSpacing="0"
+                            android:text="0"
+                            android:textAppearance="@style/BoldFont18"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/deliveredTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:letterSpacing="0"
+                            android:text="@string/delivered"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/home_grey" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardLinearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardLinearLayout"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:elevation="@dimen/_12sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <LinearLayout
+                        android:id="@+id/totalCashLinearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_green_stroke_background"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/home_one_card_back_ground_color"
+                            app:cardCornerRadius="@dimen/_40sdp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_total_quantity" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/totalCashDetailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:letterSpacing="0"
+                            android:text="0"
+                            android:textAppearance="@style/BoldFont18"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/totalCashTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:letterSpacing="0"
+                            android:text="@string/total_cash"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/home_grey" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/placedOrderLinearLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_12sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/card_green_stroke_background"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_8sdp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="@dimen/_65sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_margin="@dimen/_15sdp"
+                            android:visibility="gone"
+                            app:cardBackgroundColor="@color/home_second_card_back_ground_color"
+                            app:cardCornerRadius="@dimen/_40sdp"
+                            app:cardElevation="0dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_total_sales" />
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/placedOrderDetailTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginHorizontal="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:letterSpacing="0"
+                            android:text="0"
+                            android:textAppearance="@style/BoldFont18"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/placedOrderTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:letterSpacing="0"
+                            android:text="@string/placed_order"
+                            android:textAppearance="@style/BoldFont14"
+                            android:textColor="@color/home_grey" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contentLinearLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardLinearLayout2"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/card_green_stroke_background"
+                    android:orientation="vertical"
+                    android:paddingVertical="@dimen/_8sdp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_margin="@dimen/_15sdp"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/home_second_card_back_ground_color"
+                        app:cardCornerRadius="@dimen/_40sdp"
+                        app:cardElevation="0dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_total_sales" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/pendingOrderDetailTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:letterSpacing="0"
+                        android:text="0"
+                        android:textAppearance="@style/BoldFont18"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/pendingOrderTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:letterSpacing="0"
+                        android:text="@string/pending_order"
+                        android:textAppearance="@style/BoldFont14"
+                        android:textColor="@color/home_grey" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/contentLinearLayout3"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/home_curve_background"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/recentOrdersTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:letterSpacing="0"
+                        android:text="Recent Order"
+                        android:textAppearance="@style/BoldFont18"
+                        android:textColor="@color/black" />
+
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/nestedScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/TableLinearLayout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:overScrollMode="never" />
+
+                            <!--we are adding progress bar
+                                for the purpose of loading-->
+                            <ProgressBar
+                                android:id="@+id/idPBLoading"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                    <ImageView
+                        android:id="@+id/errorImageViewSeeds"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_250sdp"
+                        android:layout_below="@+id/recyclerView"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/error_image"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/errorTextViewSeeds"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/errorImageViewSeeds"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:lineSpacingExtra="0dp"
+                        android:text="@string/no_data_found"
+                        android:textAppearance="@style/BoldFont12"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+
+<!--
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+-->
+
+    <include
+        android:id="@+id/progressDialog"
+        layout="@layout/please_wait_progress_bar" />
+</RelativeLayout>

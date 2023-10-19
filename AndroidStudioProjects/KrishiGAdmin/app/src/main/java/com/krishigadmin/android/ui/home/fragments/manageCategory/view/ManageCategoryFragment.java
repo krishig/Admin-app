@@ -1,0 +1,313 @@
+package com.krishigadmin.android.ui.home.fragments.manageCategory.view;
+
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Base64;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.krishigadmin.android.Navigator.activity.ActivityNavigator;
+import com.krishigadmin.android.Navigator.fragment.FragmentNavigator;
+import com.krishigadmin.android.R;
+import com.krishigadmin.android.data.local.sharedpreferences.SharedPreferencesHelper;
+import com.krishigadmin.android.databinding.FragmentManageCategoryBinding;
+import com.krishigadmin.android.model.Category;
+import com.krishigadmin.android.ui.AppConstants;
+import com.krishigadmin.android.ui.base.BaseFragment;
+import com.krishigadmin.android.ui.home.fragments.addCategory.view.AddCategoryActivity;
+import com.krishigadmin.android.ui.home.fragments.addCategory.viewmodel.CategoryModel;
+import com.krishigadmin.android.ui.home.fragments.manageCategory.adapter.CategoryAdapter;
+import com.library.adapter.recyclerview.listener.OnRecyclerViewItemChildClick;
+
+import java.util.ArrayList;
+
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
+
+@AndroidEntryPoint
+public class ManageCategoryFragment extends BaseFragment<FragmentManageCategoryBinding> {
+
+    CategoryModel viewModel;
+    CategoryAdapter categoryAdapter;
+    ArrayList<Category> arrayList = new ArrayList<>();
+
+    @Inject
+    SharedPreferencesHelper sharedPreferencesHelper;
+
+    @Override
+    protected ActivityNavigator getActivityNavigator() {
+        return new ActivityNavigator(getActivity());
+    }
+
+    @Override
+    protected FragmentNavigator getFragmentNavigator() {
+        return null;
+    }
+
+    @Override
+    protected FragmentManageCategoryBinding getViewBinding() {
+        return FragmentManageCategoryBinding.inflate(getLayoutInflater());
+    }
+
+    @Override
+    protected void initializeViewModel() {
+        viewModel = createViewModel(CategoryModel.class);
+    }
+
+    @Override
+    protected void initializeToolBar() {
+        setRecyclerView(viewBinding.recyclerView);
+    }
+
+    @Override
+    protected void initializeObject() {
+
+    }
+
+    private void setRecyclerView(RecyclerView recyclerView) {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setHasFixedSize(true);
+        categoryAdapter = new CategoryAdapter(getContext());
+        categoryAdapter.addArrayList(arrayList);
+        recyclerView.setAdapter(categoryAdapter);
+    }
+
+    @Override
+    protected void addTextChangedListener() {
+/*
+        viewBinding.searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                viewModel.search(editable.toString(), AppConstants.AppConfig.AUTH_API_KEY, authHeader);
+                showProgressDialog();
+            }
+        });
+*/
+
+    }
+
+
+    @Override
+    protected void setOnFocusChangeListener() {
+
+    }
+
+    @Override
+    protected void observeViewModel() {
+
+
+        Observer<String> getCategoryUserError = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String error) {
+                hideProgressDialog();
+                if (error == null) {
+                    showToast(getString(R.string.something_went_wrong_please_try_again));
+                } else {
+                    showToast(error);
+                }
+            }
+        };
+        viewModel.getCategoryUserError().observe(this, getCategoryUserError);
+
+        final Observer<ArrayList<Category>> getCategoryUserSuccess = new Observer<ArrayList<Category>>() {
+            @Override
+            public void onChanged(ArrayList<Category> categories) {
+                hideProgressDialog();
+                int size = categories.size();
+                if (size == 0) {
+                    viewBinding.recyclerView.setVisibility(View.GONE);
+                    viewBinding.errorImageView.setVisibility(View.VISIBLE);
+                    viewBinding.errorTextView.setVisibility(View.VISIBLE);
+                } else {
+                    viewBinding.recyclerView.setVisibility(View.VISIBLE);
+                    viewBinding.errorImageView.setVisibility(View.GONE);
+                    viewBinding.errorTextView.setVisibility(View.GONE);
+                    arrayList = categories;
+                    categoryAdapter.clearAllItem();
+                    categoryAdapter.addArrayList(arrayList);
+                }
+
+            }
+        };
+        viewModel.getCategoryUserSuccess().observe(this, getCategoryUserSuccess);
+
+
+        Observer<String> deleteCategoryUserError = new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String error) {
+                hideProgressDialog();
+                if (error == null) {
+                    showToast(getString(R.string.something_went_wrong_please_try_again));
+                } else {
+                    showToast(error);
+                }
+            }
+        };
+        viewModel.deleteCategoryUserError().observe(this, deleteCategoryUserError);
+
+        final Observer<ArrayList<Category>> deleteCategoryUserSuccess = new Observer<ArrayList<Category>>() {
+            @Override
+            public void onChanged(ArrayList<Category> categories) {
+                hideProgressDialog();
+                viewModel.getCategories("application/json", "application/json",
+                        sharedPreferencesHelper.getKeyToken());
+                showProgressDialog();
+            }
+        };
+        viewModel.deleteCategoryUserSuccess().observe(this, deleteCategoryUserSuccess);
+
+    }
+
+    @Override
+    protected void setOnClickListener() {
+        viewBinding.addMaterialCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddCategoryActivity.class);
+                intent.putExtra(AppConstants.Extras.FROM, "0");
+                startActivity(intent);
+            }
+        });
+
+        categoryAdapter.setOnRecyclerViewItemChildClick(new OnRecyclerViewItemChildClick<Category>() {
+            @Override
+            public void OnItemChildClick(View viewChild, Category category, int position) {
+                switch (viewChild.getId()) {
+                    case R.id.deleteImageView:
+                        alertDialogConfirmExit(getActivity(), category.getId());
+                        break;
+                    case R.id.editImageView:
+                        Intent intent = new Intent(getActivity(), AddCategoryActivity.class);
+                        intent.putExtra(AppConstants.Extras.FROM, "1");
+                        intent.putExtra(AppConstants.Extras.CATEGORY_ID, category.getId());
+                        intent.putExtra(AppConstants.Extras.CATEGORY_NAME, category.getCategory_name());
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        });
+
+        viewBinding.refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                viewBinding.refreshLayout.setRefreshing(false);
+                viewModel.getCategories("application/json", "application/json",
+                        sharedPreferencesHelper.getKeyToken());
+                showProgressDialog();
+            }
+        });
+
+    }
+
+    @Override
+    public void showProgressBar() {
+
+    }
+
+    @Override
+    public void hideProgressBar() {
+
+    }
+
+
+    @Override
+    public void showProgressDialog() {
+        if (viewBinding.progressDialog.pleaseWaitProgressBar.getVisibility() == View.GONE) {
+            viewBinding.progressDialog.pleaseWaitProgressBar.setVisibility(View.VISIBLE);
+            getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        }
+
+    }
+
+    @Override
+    public void hideProgressDialog() {
+        if (viewBinding.progressDialog.pleaseWaitProgressBar.getVisibility() == View.VISIBLE) {
+            viewBinding.progressDialog.pleaseWaitProgressBar.setVisibility(View.GONE);
+            getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println("===========Resume============");
+        viewModel.getCategories("application/json", "application/json",
+                sharedPreferencesHelper.getKeyToken());
+        showProgressDialog();
+    }
+
+    private void alertDialogConfirmExit(Activity activity, String id) {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(activity);
+
+        alertDialogBuilder.setIcon(R.drawable.ic_black_question_mark);
+        alertDialogBuilder.setTitle("Confirm Delete");
+        alertDialogBuilder.setMessage("Are you sure you want to Delete?");
+
+
+        alertDialogBuilder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        alertDialogBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                viewModel.deleteCategories(id, "application/json", "application/json",
+                        sharedPreferencesHelper.getKeyToken());
+                showProgressDialog();
+            }
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.setCancelable(false);
+        alertDialog.setCanceledOnTouchOutside(false);
+        alertDialog.show();
+
+        Button positiveButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        Button negativeButton = alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+
+        positiveButton.setTextColor(Color.parseColor("#FFFFFF"));
+        positiveButton.setBackgroundColor(Color.parseColor("#000000"));
+
+        negativeButton.setTextColor(Color.parseColor("#FFFFFF"));
+        negativeButton.setBackgroundColor(Color.parseColor("#000000"));
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        params.setMargins(20, 0, 0, 0);
+        positiveButton.setLayoutParams(params);
+    }
+
+}
